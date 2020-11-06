@@ -5,13 +5,16 @@ namespace Alexmg86\LaravelSubQuery\Traits;
 use Alexmg86\LaravelSubQuery\Collection\LaravelSubQueryCollection;
 use Alexmg86\LaravelSubQuery\LaravelSubQuery;
 use Alexmg86\LaravelSubQuery\LaravelSubQueryCache;
+use Watson\Rememberable\Rememberable;
 
 trait LaravelSubQueryTrait
 {
+    use Rememberable;
+
     /**
      * Eager load relation sums on the model.
      *
-     * @param  array|string  $relations
+     * @param array|string $relations
      * @return $this
      */
     public function loadSum($relations)
@@ -26,7 +29,7 @@ trait LaravelSubQueryTrait
     /**
      * Eager load relation min value on the model.
      *
-     * @param  array|string  $relations
+     * @param array|string $relations
      * @return $this
      */
     public function loadMin($relations)
@@ -41,7 +44,7 @@ trait LaravelSubQueryTrait
     /**
      * Eager load relation max value on the model.
      *
-     * @param  array|string  $relations
+     * @param array|string $relations
      * @return $this
      */
     public function loadMax($relations)
@@ -56,7 +59,7 @@ trait LaravelSubQueryTrait
     /**
      * Eager load relation max value on the model.
      *
-     * @param  array|string  $relations
+     * @param array|string $relations
      * @return $this
      */
     public function loadAvg($relations)
@@ -71,7 +74,7 @@ trait LaravelSubQueryTrait
     /**
      * Eager load latest relation on the model.
      *
-     * @param  array|string  $relations
+     * @param array|string $relations
      * @return $this
      */
     public function loadOneLatest($relations)
@@ -82,7 +85,7 @@ trait LaravelSubQueryTrait
     /**
      * Eager load oldest relation on the model.
      *
-     * @param  array|string  $relations
+     * @param array|string $relations
      * @return $this
      */
     public function loadOneOldest($relations)
@@ -125,7 +128,7 @@ trait LaravelSubQueryTrait
     /**
      * Create a new Eloquent query builder for the model.
      *
-     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param \Illuminate\Database\Query\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public function newEloquentBuilder($builder)
@@ -155,7 +158,7 @@ trait LaravelSubQueryTrait
     /**
      * Create a new Eloquent Collection instance.
      *
-     * @param  array  $models
+     * @param array $models
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function newCollection(array $models = [])
